@@ -3,7 +3,10 @@ package com.holub.life;
 import java.awt.*;
 import javax.swing.*;
 
+import com.holub.life.cellcolor.BlueCellColor;
 import com.holub.life.cellcolor.CellColor;
+import com.holub.life.cellcolor.GreenCellColor;
+import com.holub.life.cellcolor.RedCellColor;
 import com.holub.ui.Colors;	// Contains constants specifying various
 							// colors not defined in java.awt.Color.
 import com.holub.life.Cell;
@@ -28,11 +31,12 @@ public final class Resident  implements Cell
 //    private static final Color NOW_DEAD_COLOR = Colors.DARK_BLUE;
 
 //	private CellColor cellColor = new CellColor(Colors.DARK_YELLOW, Colors.LIGHT_RED, Colors.LIGHT_YELLOW, Colors.LIGHT_GREEN, Colors.DARK_BLUE);
-	private CellColor cellColor = new CellColor(Colors.DARK_YELLOW, Colors.LIGHT_RED, Colors.LIGHT_YELLOW, Colors.LIGHT_RED, Colors.LIGHT_RED);
-	private CellColor cellColor1 = new CellColor(Colors.DARK_YELLOW, Colors.LIGHT_BLUE, Colors.LIGHT_YELLOW, Colors.LIGHT_BLUE, Colors.LIGHT_BLUE);
-	private CellColor cellColor2 = new CellColor(Colors.DARK_YELLOW, Colors.LIGHT_GREEN, Colors.LIGHT_YELLOW, Colors.LIGHT_GREEN, Colors.LIGHT_GREEN);
-	private CellColor cellColor3 = new CellColor(Colors.DARK_YELLOW, Colors.LIGHT_PURPLE, Colors.LIGHT_YELLOW, Colors.LIGHT_PURPLE, Colors.LIGHT_PURPLE);
-	private CellColor[] aaa = {cellColor1, cellColor2, cellColor3, cellColor1, cellColor2, cellColor3, cellColor1, cellColor2, cellColor3};
+	private CellColor cellColor = new GreenCellColor();
+
+	private CellColor cellColor1 = new BlueCellColor();
+	private CellColor cellColor2 = new RedCellColor();
+	private CellColor cellColor3 = new GreenCellColor();
+	private CellColor[] cellColors = {cellColor1, cellColor2, cellColor3};
 
 	private int now_idx = 0;
 	public static int ccount = 0;
@@ -123,9 +127,9 @@ public final class Resident  implements Cell
         ccount += 1;
 
         if(ccount % ccount_base == 0){
-			cellColor = aaa[now_idx];
+			cellColor = cellColors[now_idx];
 			now_idx += 1;
-			if(now_idx == 9){
+			if(now_idx == 3){
 				now_idx = 0;
 			}
 		}

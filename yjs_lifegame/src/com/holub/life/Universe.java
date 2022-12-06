@@ -140,11 +140,11 @@ public class Universe extends JPanel
 		);
 
 		MenuSite.addLine
-				(	this, "Grid", "10",
+				(	this, "Grid", "30",
 						new ActionListener()
 						{	public void actionPerformed(ActionEvent e)
 						{	Resident.ccount = 0;
-						Resident.ccount_base = 10;
+						Resident.ccount_base = 30;
 						}
 						}
 				);
@@ -160,12 +160,12 @@ public class Universe extends JPanel
 				);
 
 		MenuSite.addLine
-				(	this, "Grid", "30",
+				(	this, "Grid", "50",
 						new ActionListener()
 						{	public void actionPerformed(ActionEvent e)
 						{
 							Resident.ccount = 0;
-							Resident.ccount_base = 30;
+							Resident.ccount_base = 50;
 						}
 						}
 				);

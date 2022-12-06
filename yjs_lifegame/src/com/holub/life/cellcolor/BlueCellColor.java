@@ -14,23 +14,23 @@ public class BlueCellColor extends CellColor {
 
 
 
-//    public Color getBORDER_COLOR() {
-//        return BORDER_COLOR;
-//    }
-//
-//    public Color getDEAD_COLOR() {
-//        return DEAD_COLOR;
-//    }
-//
-//    public Color getLIVE_COLOR() {
-//        return LIVE_COLOR;
-//    }
-//
-//    public Color getNOW_ALIVED_COLOR() {
-//        return NOW_ALIVED_COLOR;
-//    }
-//
-//    public Color getNOW_DEAD_COLOR() {
-//        return NOW_DEAD_COLOR;
-//    }
+    public Color getBORDER_COLOR() {
+        return BORDER_COLOR;
+    }
+
+    public Color getDEAD_COLOR() {
+        return DEAD_COLOR;
+    }
+
+    public Color getLIVE_COLOR() {
+        return LIVE_COLOR;
+    }
+
+    public Color getNOW_ALIVED_COLOR() {
+        return NOW_ALIVED_COLOR;
+    }
+
+    public Color getNOW_DEAD_COLOR() {
+        return NOW_DEAD_COLOR;
+    }
 }

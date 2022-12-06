@@ -12,8 +12,6 @@ public abstract class CellColor {
     private Color NOW_ALIVED_COLOR;
     private Color NOW_DEAD_COLOR;
 
-    private int changeColorCount;
-
 //    public CellColor(Color a, Color b, Color c, Color d, Color e){
 //        BORDER_COLOR = a;
 //        LIVE_COLOR = b;
@@ -22,24 +20,14 @@ public abstract class CellColor {
 //        NOW_DEAD_COLOR = e;
 //    }
 
-    public Color getBORDER_COLOR() {
-        return BORDER_COLOR;
-    }
+    public abstract Color getBORDER_COLOR();
 
-    public Color getDEAD_COLOR() {
-        return DEAD_COLOR;
-    }
+    public abstract Color getDEAD_COLOR();
 
-    public Color getLIVE_COLOR() {
-        return LIVE_COLOR;
-    }
+    public abstract Color getLIVE_COLOR();
 
-    public Color getNOW_ALIVED_COLOR() {
-        return NOW_ALIVED_COLOR;
-    }
+    public abstract Color getNOW_ALIVED_COLOR();
 
-    public Color getNOW_DEAD_COLOR() {
-        return NOW_DEAD_COLOR;
-    }
+    public abstract Color getNOW_DEAD_COLOR();
 
 }
