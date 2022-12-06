@@ -139,6 +139,37 @@ public class Universe extends JPanel
 			}
 		);
 
+		MenuSite.addLine
+				(	this, "Grid", "10",
+						new ActionListener()
+						{	public void actionPerformed(ActionEvent e)
+						{	Resident.ccount = 0;
+						Resident.ccount_base = 10;
+						}
+						}
+				);
+		MenuSite.addLine
+				(	this, "Grid", "5",
+						new ActionListener()
+						{	public void actionPerformed(ActionEvent e)
+						{
+							Resident.ccount = 0;
+							Resident.ccount_base = 5;
+						}
+						}
+				);
+
+		MenuSite.addLine
+				(	this, "Grid", "30",
+						new ActionListener()
+						{	public void actionPerformed(ActionEvent e)
+						{
+							Resident.ccount = 0;
+							Resident.ccount_base = 30;
+						}
+						}
+				);
+
 		Clock.instance().addClockListener //{=Universe.clock.subscribe}
 		(	new Clock.Listener()
 			{	public void tick()

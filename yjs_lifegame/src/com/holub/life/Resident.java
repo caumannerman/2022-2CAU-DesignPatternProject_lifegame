@@ -2,6 +2,8 @@ package com.holub.life;
 
 import java.awt.*;
 import javax.swing.*;
+
+import com.holub.life.cellcolor.CellColor;
 import com.holub.ui.Colors;	// Contains constants specifying various
 							// colors not defined in java.awt.Color.
 import com.holub.life.Cell;
@@ -17,13 +19,23 @@ import com.holub.life.Universe;
  * @include /etc/license.txt
  */
 
-public final class Resident implements Cell
+public final class Resident  implements Cell
 {
-	private static final Color BORDER_COLOR = Colors.DARK_YELLOW;
-	private static final Color LIVE_COLOR 	= Colors.LIGHT_RED;
-	private static final Color DEAD_COLOR   = Colors.LIGHT_YELLOW;
-    private static final Color NOW_ALIVED_COLOR = Colors.LIGHT_GREEN;
-    private static final Color NOW_DEAD_COLOR = Colors.DARK_BLUE;
+//	private static final Color BORDER_COLOR = Colors.DARK_YELLOW;
+//	private static final Color LIVE_COLOR 	= Colors.LIGHT_RED;
+//	private static final Color DEAD_COLOR   = Colors.LIGHT_YELLOW;
+//    private static final Color NOW_ALIVED_COLOR = Colors.LIGHT_GREEN;
+//    private static final Color NOW_DEAD_COLOR = Colors.DARK_BLUE;
+
+	private CellColor cellColor = new CellColor(Colors.DARK_YELLOW, Colors.LIGHT_RED, Colors.LIGHT_YELLOW, Colors.LIGHT_GREEN, Colors.DARK_BLUE);
+	private CellColor cellColor1 = new CellColor(Colors.LIGHT_BLUE, Colors.LIGHT_BLUE, Colors.LIGHT_YELLOW, Colors.LIGHT_BLUE, Colors.LIGHT_BLUE);
+	private CellColor cellColor2 = new CellColor(Colors.LIGHT_GREEN, Colors.LIGHT_GREEN, Colors.LIGHT_YELLOW, Colors.LIGHT_GREEN, Colors.LIGHT_GREEN);
+	private CellColor cellColor3 = new CellColor(Colors.LIGHT_PURPLE, Colors.LIGHT_PURPLE, Colors.LIGHT_YELLOW, Colors.LIGHT_PURPLE, Colors.LIGHT_PURPLE);
+	private CellColor[] aaa = {cellColor1, cellColor2, cellColor3, cellColor1, cellColor2, cellColor3, cellColor1, cellColor2, cellColor3};
+
+	private int now_idx = 0;
+	public static int ccount = 0;
+    public static int ccount_base = 30;
 
 	private boolean amAlive 	= false;
 	private boolean willBeAlive	= false;
@@ -107,7 +119,11 @@ public final class Resident implements Cell
 		amAlive = willBeAlive;
 		//jsjs
 		// 방금 amAlive된 것을
-
+        ccount += 1;
+        if(ccount % ccount_base == 0){
+			cellColor = aaa[now_idx];
+			now_idx += 1;
+		}
 		return changed;
 	}
 
@@ -116,10 +132,10 @@ public final class Resident implements Cell
         //jsjs
 		// now_Alive상태라면 그에 맞는 color를 적용해준다.
         if(amAlive){
-			g.setColor(now_Alived ? NOW_ALIVED_COLOR : LIVE_COLOR );
+			g.setColor(now_Alived ? cellColor.getNOW_ALIVED_COLOR() :  cellColor.getLIVE_COLOR() );
 		}
         else{
-			g.setColor( now_Dead ? NOW_DEAD_COLOR : DEAD_COLOR);
+			g.setColor( now_Dead ?  cellColor.getNOW_DEAD_COLOR() :  cellColor.getDEAD_COLOR());
 		}
 
 		g.fillRect(here.x+1, here.y+1, here.width-1, here.height-1);
@@ -128,7 +144,7 @@ public final class Resident implements Cell
 		// grid, but that's life, so to speak. It's not worth the
 		// code for the special case.
 
-		g.setColor( BORDER_COLOR );
+		g.setColor(  cellColor.getBORDER_COLOR() );
 		g.drawLine( here.x, here.y, here.x, here.y + here.height );
 		g.drawLine( here.x, here.y, here.x + here.width, here.y  );
 		g.dispose();
