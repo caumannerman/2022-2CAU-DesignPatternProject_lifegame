@@ -3,10 +3,7 @@ package com.holub.life;
 import java.awt.*;
 import javax.swing.*;
 
-import com.holub.life.cellcolor.BlueCellColor;
-import com.holub.life.cellcolor.CellColor;
-import com.holub.life.cellcolor.GreenCellColor;
-import com.holub.life.cellcolor.RedCellColor;
+import com.holub.life.cellcolor.*;
 import com.holub.ui.Colors;	// Contains constants specifying various
 							// colors not defined in java.awt.Color.
 import com.holub.life.Cell;
@@ -33,11 +30,9 @@ public final class Resident  implements Cell
 //	private CellColor cellColor = new CellColor(Colors.DARK_YELLOW, Colors.LIGHT_RED, Colors.LIGHT_YELLOW, Colors.LIGHT_GREEN, Colors.DARK_BLUE);
 	public static CellColor cellColor = new BlueCellColor();
 
-	private CellColor cellColor1 = new GreenCellColor();
-	private CellColor cellColor2 = new RedCellColor();
-	private CellColor cellColor3 = new BlueCellColor();
-	private CellColor[] cellColors = {cellColor1, cellColor2, cellColor3};
+	private CellColor[] cellColors = {new RedCellColor(), new OrangeCellColor(), new YellowCellColor(), new GreenCellColor(), new BlueCellColor(), new PurpleCellColor()};
     public static boolean changeTick = true;
+
 
 	private int now_idx = 0;
 	public static int ccount = 0;
@@ -126,7 +121,7 @@ public final class Resident  implements Cell
 
 	    if(this.changeTick){
 			now_idx += 1;
-			if(now_idx == 3){
+			if(now_idx == 6){
 				now_idx = 0;
 			}
 	    	Resident.cellColor = cellColors[now_idx];

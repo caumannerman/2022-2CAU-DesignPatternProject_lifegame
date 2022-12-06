@@ -6,10 +6,10 @@ import java.awt.*;
 
 public class PurpleCellColor extends CellColor{
     private Color BORDER_COLOR = Colors.DARK_YELLOW;
-    private Color LIVE_COLOR 	= Colors.MEDIUM_RED;
+    private Color LIVE_COLOR 	= Colors.MEDIUM_PURPLE;
     private Color DEAD_COLOR   = Colors.LIGHT_YELLOW;
-    private Color NOW_ALIVED_COLOR = Colors.DARK_RED;
-    private Color NOW_DEAD_COLOR = Colors.DARK_ORANGE;
+    private Color NOW_ALIVED_COLOR = Colors.LIGHT_PURPLE;
+    private Color NOW_DEAD_COLOR = Colors.DARK_PURPLE;
 
     public Color getBORDER_COLOR() {
         return BORDER_COLOR;
