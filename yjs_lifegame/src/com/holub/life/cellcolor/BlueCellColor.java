@@ -4,23 +4,13 @@ import com.holub.ui.Colors;
 
 import java.awt.*;
 
-public abstract class CellColor {
+public class BlueCellColor {
+    private Color BORDER_COLOR = Colors.DARK_YELLOW;
+    private Color LIVE_COLOR 	= Colors.MEDIUM_RED;
+    private Color DEAD_COLOR   = Colors.LIGHT_YELLOW;
+    private Color NOW_ALIVED_COLOR = Colors.DARK_RED;
+    private Color NOW_DEAD_COLOR = Colors.DARK_ORANGE;
 
-    private Color BORDER_COLOR;
-    private Color LIVE_COLOR;
-    private Color DEAD_COLOR;
-    private Color NOW_ALIVED_COLOR;
-    private Color NOW_DEAD_COLOR;
-
-    private int changeColorCount;
-
-//    public CellColor(Color a, Color b, Color c, Color d, Color e){
-//        BORDER_COLOR = a;
-//        LIVE_COLOR = b;
-//        DEAD_COLOR = c;
-//        NOW_ALIVED_COLOR = d;
-//        NOW_DEAD_COLOR = e;
-//    }
 
     public Color getBORDER_COLOR() {
         return BORDER_COLOR;

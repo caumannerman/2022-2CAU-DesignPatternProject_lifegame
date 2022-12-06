@@ -27,10 +27,11 @@ public final class Resident  implements Cell
 //    private static final Color NOW_ALIVED_COLOR = Colors.LIGHT_GREEN;
 //    private static final Color NOW_DEAD_COLOR = Colors.DARK_BLUE;
 
-	private CellColor cellColor = new CellColor(Colors.DARK_YELLOW, Colors.LIGHT_RED, Colors.LIGHT_YELLOW, Colors.LIGHT_GREEN, Colors.DARK_BLUE);
-	private CellColor cellColor1 = new CellColor(Colors.LIGHT_BLUE, Colors.LIGHT_BLUE, Colors.LIGHT_YELLOW, Colors.LIGHT_BLUE, Colors.LIGHT_BLUE);
-	private CellColor cellColor2 = new CellColor(Colors.LIGHT_GREEN, Colors.LIGHT_GREEN, Colors.LIGHT_YELLOW, Colors.LIGHT_GREEN, Colors.LIGHT_GREEN);
-	private CellColor cellColor3 = new CellColor(Colors.LIGHT_PURPLE, Colors.LIGHT_PURPLE, Colors.LIGHT_YELLOW, Colors.LIGHT_PURPLE, Colors.LIGHT_PURPLE);
+//	private CellColor cellColor = new CellColor(Colors.DARK_YELLOW, Colors.LIGHT_RED, Colors.LIGHT_YELLOW, Colors.LIGHT_GREEN, Colors.DARK_BLUE);
+	private CellColor cellColor = new CellColor(Colors.DARK_YELLOW, Colors.LIGHT_RED, Colors.LIGHT_YELLOW, Colors.LIGHT_RED, Colors.LIGHT_RED);
+	private CellColor cellColor1 = new CellColor(Colors.DARK_YELLOW, Colors.LIGHT_BLUE, Colors.LIGHT_YELLOW, Colors.LIGHT_BLUE, Colors.LIGHT_BLUE);
+	private CellColor cellColor2 = new CellColor(Colors.DARK_YELLOW, Colors.LIGHT_GREEN, Colors.LIGHT_YELLOW, Colors.LIGHT_GREEN, Colors.LIGHT_GREEN);
+	private CellColor cellColor3 = new CellColor(Colors.DARK_YELLOW, Colors.LIGHT_PURPLE, Colors.LIGHT_YELLOW, Colors.LIGHT_PURPLE, Colors.LIGHT_PURPLE);
 	private CellColor[] aaa = {cellColor1, cellColor2, cellColor3, cellColor1, cellColor2, cellColor3, cellColor1, cellColor2, cellColor3};
 
 	private int now_idx = 0;
@@ -120,9 +121,13 @@ public final class Resident  implements Cell
 		//jsjs
 		// 방금 amAlive된 것을
         ccount += 1;
+
         if(ccount % ccount_base == 0){
 			cellColor = aaa[now_idx];
 			now_idx += 1;
+			if(now_idx == 9){
+				now_idx = 0;
+			}
 		}
 		return changed;
 	}
