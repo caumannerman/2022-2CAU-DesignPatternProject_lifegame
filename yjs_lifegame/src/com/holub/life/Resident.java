@@ -33,10 +33,11 @@ public final class Resident  implements Cell
 //	private CellColor cellColor = new CellColor(Colors.DARK_YELLOW, Colors.LIGHT_RED, Colors.LIGHT_YELLOW, Colors.LIGHT_GREEN, Colors.DARK_BLUE);
 	public static CellColor cellColor = new BlueCellColor();
 
-	private CellColor cellColor1 = new BlueCellColor();
-	private CellColor cellColor2 = new BlueCellColor();
+	private CellColor cellColor1 = new GreenCellColor();
+	private CellColor cellColor2 = new RedCellColor();
 	private CellColor cellColor3 = new BlueCellColor();
 	private CellColor[] cellColors = {cellColor1, cellColor2, cellColor3};
+    public static boolean changeTick = true;
 
 	private int now_idx = 0;
 	public static int ccount = 0;
@@ -122,6 +123,16 @@ public final class Resident  implements Cell
 			now_Dead = false;
 		}
 		amAlive = willBeAlive;
+
+	    if(this.changeTick){
+			now_idx += 1;
+			if(now_idx == 3){
+				now_idx = 0;
+			}
+	    	Resident.cellColor = cellColors[now_idx];
+//			Resident.changeTick = false;
+
+		}
 		//jsjs
 		// 방금 amAlive된 것을
 //        ccount += 1;

@@ -148,7 +148,8 @@ public class Universe extends JPanel
 						{	public void actionPerformed(ActionEvent e)
 						{	Resident.ccount = 0;
 						Resident.ccount_base = 30;
-						Resident.cellColor = new RedCellColor();
+//						Resident.cellColor = new RedCellColor();
+							Resident.changeTick = true;
 						}
 						}
 				);
@@ -159,7 +160,7 @@ public class Universe extends JPanel
 						{
 							Resident.ccount = 0;
 							Resident.ccount_base = 5;
-							Resident.cellColor = new GreenCellColor();
+//							Resident.cellColor = new GreenCellColor();
 						}
 						}
 				);
