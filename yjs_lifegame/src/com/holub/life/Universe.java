@@ -10,6 +10,7 @@ import com.holub.io.Files;
 import com.holub.life.cellcolor.BlueCellColor;
 import com.holub.life.cellcolor.GreenCellColor;
 import com.holub.life.cellcolor.RedCellColor;
+import com.holub.life.colorchangetimer.ColorChangeTimer;
 import com.holub.ui.MenuSite;
 
 import com.holub.life.Cell;
@@ -143,13 +144,15 @@ public class Universe extends JPanel
 		);
 
 		MenuSite.addLine
-				(	this, "Grid", "30",
+				(	this, "Grid", "1",
 						new ActionListener()
 						{	public void actionPerformed(ActionEvent e)
-						{	Resident.ccount = 0;
-						Resident.ccount_base = 30;
+						{	//Resident.ccount = 0;
+//						Resident.ccount_base = 30;
 //						Resident.cellColor = new RedCellColor();
 							Resident.changeTick = true;
+							ColorChangeTimer.changeUnitTime = 1;
+							System.out.println("1초마다 색깔 변경하도록 설정");
 						}
 						}
 				);
@@ -157,21 +160,26 @@ public class Universe extends JPanel
 				(	this, "Grid", "5",
 						new ActionListener()
 						{	public void actionPerformed(ActionEvent e)
-						{
-							Resident.ccount = 0;
-							Resident.ccount_base = 5;
-//							Resident.cellColor = new GreenCellColor();
+						{	//Resident.ccount = 0;
+//						Resident.ccount_base = 30;
+//						Resident.cellColor = new RedCellColor();
+							Resident.changeTick = true;
+							ColorChangeTimer.changeUnitTime = 5;
+							System.out.println("5초마다 색깔 변경하도록 설정");
 						}
 						}
 				);
 
 		MenuSite.addLine
-				(	this, "Grid", "50",
+				(	this, "Grid", "20",
 						new ActionListener()
 						{	public void actionPerformed(ActionEvent e)
-						{
-							Resident.ccount = 0;
-							Resident.ccount_base = 50;
+						{	//Resident.ccount = 0;
+//						Resident.ccount_base = 30;
+//						Resident.cellColor = new RedCellColor();
+							Resident.changeTick = true;
+							ColorChangeTimer.changeUnitTime = 20;
+							System.out.println("20초마다 색깔 변경하도록 설정");
 						}
 						}
 				);
