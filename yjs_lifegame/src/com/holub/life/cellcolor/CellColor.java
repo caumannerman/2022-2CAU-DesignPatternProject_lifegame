@@ -41,4 +41,5 @@ public abstract class CellColor {
     public Color getNOW_DEAD_COLOR() {
         return NOW_DEAD_COLOR;
     }
+
 }
