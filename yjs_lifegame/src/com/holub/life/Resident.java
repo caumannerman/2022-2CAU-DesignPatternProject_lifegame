@@ -31,16 +31,16 @@ public final class Resident  implements Cell
 //    private static final Color NOW_DEAD_COLOR = Colors.DARK_BLUE;
 
 //	private CellColor cellColor = new CellColor(Colors.DARK_YELLOW, Colors.LIGHT_RED, Colors.LIGHT_YELLOW, Colors.LIGHT_GREEN, Colors.DARK_BLUE);
-	private CellColor cellColor = new GreenCellColor();
+	public static CellColor cellColor = new BlueCellColor();
 
 	private CellColor cellColor1 = new BlueCellColor();
-	private CellColor cellColor2 = new RedCellColor();
-	private CellColor cellColor3 = new GreenCellColor();
+	private CellColor cellColor2 = new BlueCellColor();
+	private CellColor cellColor3 = new BlueCellColor();
 	private CellColor[] cellColors = {cellColor1, cellColor2, cellColor3};
 
 	private int now_idx = 0;
 	public static int ccount = 0;
-    public static int ccount_base = 30;
+    public static int ccount_base = 100;
 
 	private boolean amAlive 	= false;
 	private boolean willBeAlive	= false;
@@ -124,15 +124,15 @@ public final class Resident  implements Cell
 		amAlive = willBeAlive;
 		//jsjs
 		// 방금 amAlive된 것을
-        ccount += 1;
-
-        if(ccount % ccount_base == 0){
-			cellColor = cellColors[now_idx];
-			now_idx += 1;
-			if(now_idx == 3){
-				now_idx = 0;
-			}
-		}
+//        ccount += 1;
+//
+//        if(ccount % ccount_base == 0){
+//			cellColor = cellColors[now_idx];
+//			now_idx += 1;
+//			if(now_idx == 3){
+//				now_idx = 0;
+//			}
+//		}
 		return changed;
 	}
 
@@ -142,6 +142,7 @@ public final class Resident  implements Cell
 		// now_Alive상태라면 그에 맞는 color를 적용해준다.
         if(amAlive){
 			g.setColor(now_Alived ? cellColor.getNOW_ALIVED_COLOR() :  cellColor.getLIVE_COLOR() );
+
 		}
         else{
 			g.setColor( now_Dead ?  cellColor.getNOW_DEAD_COLOR() :  cellColor.getDEAD_COLOR());

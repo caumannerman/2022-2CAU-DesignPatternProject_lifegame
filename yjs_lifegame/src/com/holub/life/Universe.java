@@ -7,6 +7,9 @@ import javax.swing.*;
 import java.awt.event.*;
 
 import com.holub.io.Files;
+import com.holub.life.cellcolor.BlueCellColor;
+import com.holub.life.cellcolor.GreenCellColor;
+import com.holub.life.cellcolor.RedCellColor;
 import com.holub.ui.MenuSite;
 
 import com.holub.life.Cell;
@@ -145,6 +148,7 @@ public class Universe extends JPanel
 						{	public void actionPerformed(ActionEvent e)
 						{	Resident.ccount = 0;
 						Resident.ccount_base = 30;
+						Resident.cellColor = new RedCellColor();
 						}
 						}
 				);
@@ -155,6 +159,7 @@ public class Universe extends JPanel
 						{
 							Resident.ccount = 0;
 							Resident.ccount_base = 5;
+							Resident.cellColor = new GreenCellColor();
 						}
 						}
 				);
