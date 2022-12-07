@@ -28,10 +28,12 @@ public final class Resident  implements Cell
 //    private static final Color NOW_DEAD_COLOR = Colors.DARK_BLUE;
 
 //	private CellColor cellColor = new CellColor(Colors.DARK_YELLOW, Colors.LIGHT_RED, Colors.LIGHT_YELLOW, Colors.LIGHT_GREEN, Colors.DARK_BLUE);
+	//현재의 Color를 나타내는 ~~cellColor객체를 가질 변수 cellColor
 	public static CellColor cellColor = new BlueCellColor();
 
 	private CellColor[] cellColors = {new RedCellColor(), new OrangeCellColor(), new YellowCellColor(), new GreenCellColor(), new BlueCellColor(), new PurpleCellColor()};
-    public static boolean changeTick = true;
+    //색깔을 바꿀지 여부를 결정하는 변수
+	public static boolean changeTick = true;
 
 
 	private int now_idx = 0;
@@ -125,7 +127,8 @@ public final class Resident  implements Cell
 				now_idx = 0;
 			}
 	    	Resident.cellColor = cellColors[now_idx];
-//			Resident.changeTick = false;
+			//한 번 색깔을 바꾸면 다시 tick을 종료시킴 (색깔이 또 바뀌지 않도록)
+			Resident.changeTick = false;
 
 		}
 		//jsjs
