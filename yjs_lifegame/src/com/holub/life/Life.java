@@ -2,6 +2,8 @@ package com.holub.life;
 
 import java.awt.*;
 import javax.swing.*;
+
+import com.holub.life.colorchangetimer.ColorChangeTimer;
 import com.holub.ui.MenuSite;
 
 /*******************************************************************
@@ -16,6 +18,9 @@ public final class Life extends JFrame
 
 	public static void main( String[] arguments )
 	{	new Life();
+		ColorChangeTimer colorChangeTimer = ColorChangeTimer.getInstance();
+		//시간 측정 무한루프를 돌림
+		colorChangeTimer.setMeasurements();
 	}
 
 	private Life()
