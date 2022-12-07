@@ -4,6 +4,8 @@ import com.holub.life.Resident;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 //싱글톤으로 구현하면 됨. + 옵저버로 신호 보내기
 public class ColorChangeTimer {
@@ -61,7 +63,7 @@ public class ColorChangeTimer {
         //여기서 시간을 계속 재다가 changeUnitTime을 지나가게 되면 notifyObserver하고 시간 초기화
         while(true){
             try {
-                Thread.sleep(1000L);
+                Thread.sleep(50L);
             } catch(InterruptedException e) {
                 e.printStackTrace();
             }
@@ -69,8 +71,8 @@ public class ColorChangeTimer {
             if ((latterTime - formerTime) / 1000 > ColorChangeTimer.changeUnitTime){
                 System.out.println("Observer패턴 ColorChangeTime에서 notifyObservers 호출");
                 notifyObservers();
-                //다음 색깔 바꾸는 시점을 포착해야하므로, 방금 색깔을 바꾸라고 notify한 시간을 formerTime에 저장
-                formerTime = latterTime;
+                //다음 색깔 바꾸는 시점을 포착해야하므로, 방금 색깔을 바꾸라고 notify한 직후의 시간을 formerTime에 저장
+                formerTime = System.currentTimeMillis();
             }
         }
     }

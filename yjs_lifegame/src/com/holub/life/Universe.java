@@ -157,29 +157,29 @@ public class Universe extends JPanel
 						}
 				);
 		MenuSite.addLine
-				(	this, "Grid", "5",
+				(	this, "Grid", "3",
 						new ActionListener()
 						{	public void actionPerformed(ActionEvent e)
 						{	//Resident.ccount = 0;
 //						Resident.ccount_base = 30;
 //						Resident.cellColor = new RedCellColor();
 							Resident.changeTick = true;
-							ColorChangeTimer.changeUnitTime = 5;
-							System.out.println("5초마다 색깔 변경하도록 설정");
+							ColorChangeTimer.changeUnitTime = 3;
+							System.out.println("3초마다 색깔 변경하도록 설정");
 						}
 						}
 				);
 
 		MenuSite.addLine
-				(	this, "Grid", "20",
+				(	this, "Grid", "7",
 						new ActionListener()
 						{	public void actionPerformed(ActionEvent e)
 						{	//Resident.ccount = 0;
 //						Resident.ccount_base = 30;
 //						Resident.cellColor = new RedCellColor();
 							Resident.changeTick = true;
-							ColorChangeTimer.changeUnitTime = 20;
-							System.out.println("20초마다 색깔 변경하도록 설정");
+							ColorChangeTimer.changeUnitTime = 7;
+							System.out.println("7초마다 색깔 변경하도록 설정");
 						}
 						}
 				);
