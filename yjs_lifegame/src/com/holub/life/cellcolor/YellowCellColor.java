@@ -9,7 +9,6 @@ public class YellowCellColor extends CellColor{
     private Color LIVE_COLOR 	= Colors.OCHRE;
     private Color DEAD_COLOR   = Colors.LIGHT_YELLOW;
     private Color NOW_ALIVED_COLOR = Colors.LIGHT_ORANGE;
-    private Color NOW_DEAD_COLOR = Colors.LIGHT_YELLOW;
 
     public Color getBORDER_COLOR() {
         return BORDER_COLOR;
@@ -27,7 +26,4 @@ public class YellowCellColor extends CellColor{
         return NOW_ALIVED_COLOR;
     }
 
-    public Color getNOW_DEAD_COLOR() {
-        return NOW_DEAD_COLOR;
-    }
 }

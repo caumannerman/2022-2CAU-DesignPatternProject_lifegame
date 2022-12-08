@@ -108,16 +108,14 @@ public final class Resident  implements Cell
 		// 죽어있었고, 이번에 살아나는 것을 state전달해주며, 방금 살아났다는 체크를 now_Alived = true를 통해 해줌
 	    if(!amAlive && willBeAlive){
 	    	now_Alived = true;
-			now_Dead = false;
 		}
-	    //살아있었는데 죽는 것들은 now_Dead처
+	    //살아있었는데 죽는 것들은
 	    else if(amAlive && !willBeAlive){
-	    	now_Dead = true;
+
 			now_Alived = false;
 		}
 	    else{
 	    	now_Alived = false;
-			now_Dead = false;
 		}
 		amAlive = willBeAlive;
 
@@ -154,7 +152,7 @@ public final class Resident  implements Cell
 
 		}
         else{
-			g.setColor( now_Dead ?  cellColor.getNOW_DEAD_COLOR() :  cellColor.getDEAD_COLOR());
+			g.setColor( cellColor.getDEAD_COLOR());
 		}
 
 		g.fillRect(here.x+1, here.y+1, here.width-1, here.height-1);

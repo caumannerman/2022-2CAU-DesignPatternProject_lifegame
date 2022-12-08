@@ -9,7 +9,7 @@ public class RedCellColor extends CellColor {
     private Color LIVE_COLOR 	= Colors.DARK_RED;
     private Color DEAD_COLOR   = Colors.LIGHT_YELLOW;
     private Color NOW_ALIVED_COLOR = Colors.MEDIUM_RED;
-    private Color NOW_DEAD_COLOR = Colors.LIGHT_RED;
+
 
     public Color getBORDER_COLOR() {
         return BORDER_COLOR;
@@ -27,7 +27,4 @@ public class RedCellColor extends CellColor {
         return NOW_ALIVED_COLOR;
     }
 
-    public Color getNOW_DEAD_COLOR() {
-        return NOW_DEAD_COLOR;
-    }
 }

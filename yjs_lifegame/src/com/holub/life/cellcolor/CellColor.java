@@ -10,7 +10,7 @@ public abstract class CellColor {
     private Color LIVE_COLOR;
     private Color DEAD_COLOR;
     private Color NOW_ALIVED_COLOR;
-    private Color NOW_DEAD_COLOR;
+
 
     public abstract Color getBORDER_COLOR();
 
@@ -20,6 +20,5 @@ public abstract class CellColor {
 
     public abstract Color getNOW_ALIVED_COLOR();
 
-    public abstract Color getNOW_DEAD_COLOR();
 
 }
