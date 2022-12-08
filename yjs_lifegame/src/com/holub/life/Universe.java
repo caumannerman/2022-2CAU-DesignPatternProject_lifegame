@@ -148,9 +148,11 @@ public class Universe extends JPanel
 				(	this, "Timer", "2",
 						new ActionListener()
 						{	public void actionPerformed(ActionEvent e)
-						{	Resident.changeTick = true;
+						{
 							ColorChangeTimer.changeUnitTime = 1;
-							System.out.println("1초마다 색깔 변경하도록 설정");
+							Resident.changeTick = true;
+							ColorChangeTimer.resetFormerTime();
+							System.out.println("2초마다 색깔 변경하도록 설정");
 						}
 						}
 				);
@@ -159,9 +161,11 @@ public class Universe extends JPanel
 				(	this, "Timer", "5",
 						new ActionListener()
 						{	public void actionPerformed(ActionEvent e)
-						{	Resident.changeTick = true;
+						{
 							ColorChangeTimer.changeUnitTime = 4;
-							System.out.println("1초마다 색깔 변경하도록 설정");
+							Resident.changeTick = true;
+							ColorChangeTimer.resetFormerTime();
+							System.out.println("4초마다 색깔 변경하도록 설정");
 						}
 						}
 				);
@@ -170,9 +174,11 @@ public class Universe extends JPanel
 				(	this, "Timer", "10",
 						new ActionListener()
 						{	public void actionPerformed(ActionEvent e)
-						{	Resident.changeTick = true;
+						{
 							ColorChangeTimer.changeUnitTime = 9;
-							System.out.println("1초마다 색깔 변경하도록 설정");
+							Resident.changeTick = true;
+							ColorChangeTimer.resetFormerTime();
+							System.out.println("9초마다 색깔 변경하도록 설정");
 						}
 						}
 				);
@@ -181,9 +187,11 @@ public class Universe extends JPanel
 				(	this, "Timer", "15",
 						new ActionListener()
 						{	public void actionPerformed(ActionEvent e)
-						{	Resident.changeTick = true;
+						{
 							ColorChangeTimer.changeUnitTime = 15;
-							System.out.println("1초마다 색깔 변경하도록 설정");
+							Resident.changeTick = true;
+							ColorChangeTimer.resetFormerTime();
+							System.out.println("15초마다 색깔 변경하도록 설정");
 						}
 						}
 				);
@@ -191,9 +199,11 @@ public class Universe extends JPanel
 				(	this, "Timer", "30",
 						new ActionListener()
 						{	public void actionPerformed(ActionEvent e)
-						{	Resident.changeTick = true;
+						{
 							ColorChangeTimer.changeUnitTime = 29;
-							System.out.println("1초마다 색깔 변경하도록 설정");
+							Resident.changeTick = true;
+							ColorChangeTimer.resetFormerTime();
+							System.out.println("30초마다 색깔 변경하도록 설정");
 						}
 						}
 				);

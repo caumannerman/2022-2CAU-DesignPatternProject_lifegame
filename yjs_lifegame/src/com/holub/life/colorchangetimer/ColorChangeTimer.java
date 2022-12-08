@@ -17,14 +17,14 @@ public class ColorChangeTimer {
     //색깔을 change하라고 신호를 주는 기준이 되는 단위시간
     public static int changeUnitTime = 1;
     // 이 클래스 객체가 만들어진 시간
-    private long formerTime;
+    private static long formerTime = System.currentTimeMillis();
     private long latterTime;
 
 
     // (#Singleton2#)싱글톤으로 생성하기 위해 생성자를 private로
     private ColorChangeTimer(){
         // 시간측정을 위함
-        this.formerTime = System.currentTimeMillis();
+        ColorChangeTimer.formerTime = System.currentTimeMillis();
         // (##Observer##) 생성자에서 observers 리스트 초기화
         observers = new ArrayList();
     }
@@ -60,9 +60,10 @@ public class ColorChangeTimer {
     }
 
     //Timer 기준시간을 바꿔주었을 때, 그 시점부터 시작해서 해당 기준시간을 측정하기 위해 formerTime을 현시간으로 리셋.
-    public void resetFormerTime(){
-        this.formerTime = System.currentTimeMillis();
+    public static void resetFormerTime(){
+        ColorChangeTimer.formerTime = System.currentTimeMillis();
     }
+
     public void setMeasurements(){
         //여기서 시간을 계속 재다가 changeUnitTime을 지나가게 되면 notifyObserver하고 시간 초기화
         while(true){
@@ -76,7 +77,7 @@ public class ColorChangeTimer {
                 System.out.println("Observer패턴 ColorChangeTime에서 notifyObservers 호출");
                 notifyObservers();
                 //다음 색깔 바꾸는 시점을 포착해야하므로, 방금 색깔을 바꾸라고 notify한 직후의 시간을 formerTime에 저장
-                formerTime = System.currentTimeMillis();
+                resetFormerTime();
             }
         }
     }

@@ -27,4 +27,13 @@ public class ColorChangeTimerTest {
         assertEquals(true, Resident.changeTick);
     }
 
+    @Test
+    void resetFormerTime() {
+        ColorChangeTimer colorChangeTimer = ColorChangeTimer.getInstance();
+        // 옵저버패턴으로서 Resident의 static변수인 changeTick을 true로 바꿔줌
+        colorChangeTimer.resetFormerTime();
+        // notifyObservers()가 잘 수행되어 Resident의 static 변수인 changeTick을 true로 바꿔주었는지 확인
+        assertEquals(true, Resident.changeTick);
+    }
+
 }
