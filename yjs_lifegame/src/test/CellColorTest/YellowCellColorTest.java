@@ -1,3 +1,5 @@
+package CellColorTest;
+
 import com.holub.life.cellcolor.CellColor;
 import com.holub.life.cellcolor.YellowCellColor;
 import com.holub.ui.Colors;
