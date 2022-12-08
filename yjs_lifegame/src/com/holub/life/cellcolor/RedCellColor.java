@@ -6,9 +6,9 @@ import java.awt.*;
 
 public class RedCellColor extends CellColor {
     private Color BORDER_COLOR = Colors.DARK_YELLOW;
-    private Color LIVE_COLOR 	= Colors.DARK_RED;
+    private Color LIVE_COLOR 	= Colors.LIGHT_RED;
     private Color DEAD_COLOR   = Colors.LIGHT_YELLOW;
-    private Color NOW_ALIVED_COLOR = Colors.MEDIUM_RED;
+    private Color NOW_ALIVED_COLOR = Colors.DARK_RED;
 
 
     public Color getBORDER_COLOR() {
