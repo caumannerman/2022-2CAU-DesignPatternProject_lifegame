@@ -39,13 +39,13 @@ public class ColorChangeTimer {
         }
         return colorChangeTimer;
     }
+
     // (##Observer##)
     public void registerObserver(Resident r){
         observers.add(r);
     }
-    public void removeObserver(Resident r){
+    public void removeObserver(Resident r){   }
 
-    }
     //(##Observer패턴##)
     //기본 Observer패턴에서 아래 함수에서는 observers를 돌며 모두에게 update()함수를 호출하지만
     //나는 Resident의 static변수로 소통하면 되기에 반복문은 없앴다.
