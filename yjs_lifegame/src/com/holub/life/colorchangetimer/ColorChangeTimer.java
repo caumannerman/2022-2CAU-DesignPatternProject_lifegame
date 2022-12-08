@@ -41,10 +41,14 @@ public class ColorChangeTimer {
     }
 
     // (##Observer##)
-    public void registerObserver(Resident r){
-        observers.add(r);
-    }
-    public void removeObserver(Resident r){   }
+//    public void registerObserver(Resident r){
+//        observers.add(r);
+//    }
+//    public void removeObserver(Resident r){   }
+//    //Resident에 알려야할 조건을 만족하면 notify한다.
+//    public void measurementsChanged(){
+//        notifyObservers();
+//    }
 
     //(##Observer패턴##)
     //기본 Observer패턴에서 아래 함수에서는 observers를 돌며 모두에게 update()함수를 호출하지만
@@ -53,11 +57,8 @@ public class ColorChangeTimer {
         Resident.changeTick = true;
     }
 
-    //(##Observer패턴##)
-    //Resident에 알려야할 조건을 만족하면 notify한다.
-    public void measurementsChanged(){
-        notifyObservers();
-    }
+
+
 
     //Timer 기준시간을 바꿔주었을 때, 그 시점부터 시작해서 해당 기준시간을 측정하기 위해 formerTime을 현시간으로 리셋.
     public static void resetFormerTime(){
