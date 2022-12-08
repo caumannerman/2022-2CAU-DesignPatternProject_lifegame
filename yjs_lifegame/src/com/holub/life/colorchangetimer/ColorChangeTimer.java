@@ -58,7 +58,11 @@ public class ColorChangeTimer {
     public void measurementsChanged(){
         notifyObservers();
     }
-
+    
+    //Timer 기준시간을 바꿔주었을 때, 그 시점부터 시작해서 해당 기준시간을 측정하기 위해 formerTime을 현시간으로 리셋.
+    public void resetFormerTime(){
+        this.formerTime = System.currentTimeMillis();
+    }
     public void setMeasurements(){
         //여기서 시간을 계속 재다가 changeUnitTime을 지나가게 되면 notifyObserver하고 시간 초기화
         while(true){

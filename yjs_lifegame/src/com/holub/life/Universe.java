@@ -143,43 +143,57 @@ public class Universe extends JPanel
 			}
 		);
 
-		MenuSite.addLine
-				(	this, "Grid", "1",
+		// 이곳에 colorChangeTimer관련 메뉴들을 작성
+		MenuSite.addLine			// {=Universe.load.setup}
+				(	this, "Timer", "2",
 						new ActionListener()
 						{	public void actionPerformed(ActionEvent e)
-						{	//Resident.ccount = 0;
-//						Resident.ccount_base = 30;
-//						Resident.cellColor = new RedCellColor();
-							Resident.changeTick = true;
+						{	Resident.changeTick = true;
 							ColorChangeTimer.changeUnitTime = 1;
 							System.out.println("1초마다 색깔 변경하도록 설정");
 						}
 						}
 				);
-		MenuSite.addLine
-				(	this, "Grid", "3",
+
+		MenuSite.addLine			// {=Universe.load.setup}
+				(	this, "Timer", "5",
 						new ActionListener()
 						{	public void actionPerformed(ActionEvent e)
-						{	//Resident.ccount = 0;
-//						Resident.ccount_base = 30;
-//						Resident.cellColor = new RedCellColor();
-							Resident.changeTick = true;
-							ColorChangeTimer.changeUnitTime = 3;
-							System.out.println("3초마다 색깔 변경하도록 설정");
+						{	Resident.changeTick = true;
+							ColorChangeTimer.changeUnitTime = 4;
+							System.out.println("1초마다 색깔 변경하도록 설정");
 						}
 						}
 				);
 
-		MenuSite.addLine
-				(	this, "Grid", "7",
+		MenuSite.addLine			// {=Universe.load.setup}
+				(	this, "Timer", "10",
 						new ActionListener()
 						{	public void actionPerformed(ActionEvent e)
-						{	//Resident.ccount = 0;
-//						Resident.ccount_base = 30;
-//						Resident.cellColor = new RedCellColor();
-							Resident.changeTick = true;
-							ColorChangeTimer.changeUnitTime = 7;
-							System.out.println("7초마다 색깔 변경하도록 설정");
+						{	Resident.changeTick = true;
+							ColorChangeTimer.changeUnitTime = 9;
+							System.out.println("1초마다 색깔 변경하도록 설정");
+						}
+						}
+				);
+
+		MenuSite.addLine			// {=Universe.load.setup}
+				(	this, "Timer", "15",
+						new ActionListener()
+						{	public void actionPerformed(ActionEvent e)
+						{	Resident.changeTick = true;
+							ColorChangeTimer.changeUnitTime = 15;
+							System.out.println("1초마다 색깔 변경하도록 설정");
+						}
+						}
+				);
+		MenuSite.addLine			// {=Universe.load.setup}
+				(	this, "Timer", "30",
+						new ActionListener()
+						{	public void actionPerformed(ActionEvent e)
+						{	Resident.changeTick = true;
+							ColorChangeTimer.changeUnitTime = 29;
+							System.out.println("1초마다 색깔 변경하도록 설정");
 						}
 						}
 				);
